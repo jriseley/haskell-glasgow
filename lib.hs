@@ -13,3 +13,4 @@ mymax x y =
         y
 
 -- TODO can I have a function that includes a case statement?
+

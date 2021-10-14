@@ -29,3 +29,7 @@ Try one of the functions defined in `lib.hs`:
 ```
 *Main> roots 10 34 2
 ```
+
+# The startman.hs example from week 2
+
+Week 2 includes an example "guessing game". 
