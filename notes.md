@@ -10,6 +10,9 @@ Futurelearn. It is roughly 24 hours of content offered over six weeks.
 I have created a code repo that incorporates examples from this course.
 The repo is hosted [here](https://github.com/jriseley/haskell-glasgow).
 
+I was not able to perform any of the exercises using the interactive
+Haskell interpreter, due to a problem with the plugin.
+
 Week 1
 ======
 
@@ -216,3 +219,76 @@ Prelude> xs = [1, 2, xs !! 5, 4]
 
     - ****True****
     -   False
+
+Haskell Building Blocks
+=======================
+
+More basic Haskell
+------------------
+
+### Zip that list!
+
+-   zip takes a pair of lists and produces a list of pairs
+
+    ``` {.haskell}
+    Prelude> zip [1,2,3] [4,5,6]
+    [(1,4),(2,5),(3,6)]
+    Prelude> zip [1,2,3] "abc"
+    [(1,'a'),(2,'b'),(3,'c')]
+    ```
+
+-   Also try `zip3`.
+-   Zipping lists of disparate length will result in a list of pairs the
+    same length as the shorter input list.
+-   `zipWith` allows a function to be applied pairwise to produce a new
+    list"
+
+        zipWith max [1,2,3] [0,2,4]
+        [1,2,4]
+
+### Quiz: "Nothing but the truth"
+
+1.  What is the value of this expression?
+
+        let x = 5 in x == 5
+
+    - ****True****
+    -   False
+
+2.  Which one of the following expressions should always evaluate to
+    True?
+
+    -   \~"haskell" &lt;&gt; "python"\~
+
+    - \*\*\~"haskell" &lt; "python"`**
+     - ~haskell < python`
+
+3.  What is wrong with the following haskell expression?
+
+        if (1) then "true" else "false"
+
+    - ****The condition is incorrectly typed, since it is an integer
+    value****
+
+4.  Which of the following expressions does not evaluate to 42?
+
+    -   `(*) 21 2`
+    -   `[7,23,42] !! ((+) 1 1)`
+
+    - ****`head (zip [42] [True])`****
+
+5.  Given these definitions:
+
+        a = "england"
+        b = "scotland"
+
+    then which one of the following expressions has the greatest integer
+    value?
+
+    -   `length (zip a b)`
+    -   `length (zip a a)`
+
+    - ****`length (zip b b)`****
+
+Input and output
+----------------
