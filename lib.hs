@@ -11,3 +11,5 @@ mymax x y =
         x
     else
         y
+
+-- TODO can I have a function that includes a case statement?
