@@ -5,6 +5,8 @@ jf.riseley@gmail.com
 
 This repository contains Haskell code examples from the University of Glasgow course hosted on FutureLearn.
 
+My notes for the course are in `notes.org`.
+
 The course materials are owned by [Jeremy Singer](http://dcs.gla.ac.uk/~jsinger) and [Wim Vanderbauwhede](http://www.dcs.gla.ac.uk/~wim/).
 
 
