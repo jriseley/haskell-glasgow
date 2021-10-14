@@ -292,3 +292,64 @@ More basic Haskell
 
 Input and output
 ----------------
+
+-   Haskell programs implement I/O using the "I/O Monad"
+-   `getLine` and `putStrLn`
+-   the point of IO types is to avoid mixing pure and impure functions.
+-   `do` is used to (impurely) specify a sequence of actions
+-   see the `starman.hs` example
+
+Installing GHC
+--------------
+
+### What do you know about Haskell? Quiz
+
+1.  What is wrong with this line of code, to return the number of
+    characters typed by a user?
+
+    -   The code associates the name x with the getLine function, rather
+        than receiving a line of input from the user — and we can’t take
+        length of a function.
+
+2.  What is the type of this function?
+
+        f name = putStrLn ("hello " ++ name)
+
+    -   `[Char] -> IO ()`
+
+3.  How do you find the type of a defined function f in ghci?
+
+    -   `:type f`
+
+4.  What is the difference between `->` and `<-` in Haskell syntax?
+
+    -   `<-` is for associating names with values in `do` blocks whereas
+        `->` is used for defining functions
+
+5.  Why do you think the generation and use of pseudo-random numbers
+    might occur inside a monad?
+
+    -   because the sequence of pseudo-random numbers is important, and
+        the programmer needs to control it. Monads are a powerful tool
+        for sequencing operations.
+
+### End of week 2
+
+Coding challenge: using `starman.hs` as a starting point, implement
+another guessing game in Haskell.
+
+Data structures and types
+=========================
+
+Functions on lists
+------------------
+
+### Recursive functions on lists
+
+In Haskell, there are two approaches to working with lists:
+
+1.  Write functions to do what you want, using recursive definitions
+    that traverse the list structure
+2.  Write combinations of standard list processing functions
+
+### Functional maps and folds versus imperative
