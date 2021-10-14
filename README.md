@@ -30,6 +30,16 @@ Try one of the functions defined in `lib.hs`:
 *Main> roots 10 34 2
 ```
 
-# The startman.hs example from week 2
+# The starman.hs example from week 2
 
 Week 2 includes an example "guessing game". 
+
+# My solution to the week 2 implementation exercise
+
+I implemented a guessing game in `guess.hs`.
+
+```
+$ ghci
+$ Prelude> :load guess
+$ *Main> guess 50 5
+```
