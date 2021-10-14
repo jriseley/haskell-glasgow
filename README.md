@@ -12,6 +12,8 @@ The course materials are owned by [Jeremy Singer](http://dcs.gla.ac.uk/~jsinger)
 
 # Usage
 
+## Play with example functions interactively 
+
 Open prelude:
 
 ```
@@ -30,11 +32,11 @@ Try one of the functions defined in `lib.hs`:
 *Main> roots 10 34 2
 ```
 
-# The starman.hs example from week 2
+## The starman.hs example from week 2
 
 Week 2 includes an example "guessing game". 
 
-# My solution to the week 2 implementation exercise
+## My solution to the week 2 implementation exercise
 
 I implemented a guessing game in `guess.hs`.
 
