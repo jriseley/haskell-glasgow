@@ -15,9 +15,11 @@
 -- $ ghci
 -- Prelude> :load guess
 
--- And then start the game with a number of guesses before you lose, e.g.:
+-- And then start the game with parameters:
+-- N: you will be asked to guess a number in [1,N] inclusive
+-- guesses: number of guesses before you lose
 
--- *Main> guess 5
+-- *Main> guess N guesses
 
 -- You will be prompted for a random phrase that will generate the magic number.
 
@@ -25,15 +27,15 @@
 
 -- I'm not sure how to generate random numbers in Haskell, 
 -- so we will generate a pseudorandom number by hashing a string that the user inputs. 
-hashToInt :: String -> Int 
-hashToInt salt = mod (37*(length salt)) 30
+hashToInt :: String -> Int -> Int 
+hashToInt salt modulo = (mod (37*(length salt)) modulo) + 1
 
 getHint :: Int -> Int -> String 
 getHint guess target = if guess < target then "Try a bigger number..." else "Try a smaller number..."
 
 mkguess :: Int -> Int -> IO ()
 mkguess magicNumber n = do 
-        putStrLn "  Enter your guess (between 0 and 29 inclusive): "
+        putStrLn "  Enter your guess: "
         guessStr <- getLine
         let guess = read guessStr :: Int
         let correct = magicNumber == guess
@@ -46,12 +48,12 @@ mkguess magicNumber n = do
                      mkguess magicNumber n'
 
 
-guess :: Int -> IO ()
-guess n = do
+guess :: Int -> Int -> IO ()
+guess modulo n = do
     putStrLn ("Starting guessing game")
     putStr "Enter a magic phrase: "
     magicPhrase <- getLine
-    putStrLn("Generating a magic number... done!")
-    mkguess (hashToInt magicPhrase) n
+    putStrLn("Generating a magic number between 1 and " ++ (show modulo) ++ " inclusive ... done!")
+    mkguess (hashToInt magicPhrase modulo) n
 
 
