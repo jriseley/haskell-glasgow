@@ -4,3 +4,10 @@ roots a b c = let
     root1 = (-b + det)/2/a
     root2 = (-b-det)/2/a
     in [root1, root2]
+
+mymax x y = 
+    if x > y 
+    then
+        x
+    else
+        y
